@@ -5,6 +5,7 @@
 - **➕:** required libraries
 - **➕:** kodex comments for pin layouts
 - **➕:** constants and variables
+- **➕:** initialization to display and arrays for temperature and humidity data samples
   
 # Glossary
 **ADDED** = ➕ **|**
