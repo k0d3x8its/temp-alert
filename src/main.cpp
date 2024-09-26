@@ -64,8 +64,28 @@ unsigned long lastSampleTime = 0;       // Time for Sampling
 unsigned long samplingInterval = 5000;  // Five second intervals (adjustable)
 
 void setup() {
-Serial.begin(115200);                   // Start serial comms for debugging
+  Serial.begin(115200);                 // Start serial comms for debugging
 
+  dht.begin();                          // Intialize DHT sensor
+
+//Intialize OLED display
+  if (!display.begin(0x3C, true)) {
+    Serial.println("OLED failed to initialize");
+    while (1);                          // If the display fails to initialize, stop program
+  }
+
+  display.display();                    // Show the initial display screen
+  delay(2000);                          // Pause for two second
+  display.clearDisplay();               // Clear the display
+  display.setTextSize(1);               // Set text size to smallest size
+  display.setTextColor(SH110X_WHITE);   // Set the text color to white
+
+  // Initialize sample array to zero
+  for (int dataCollected = 0; dataCollected < dataSamples; dataCollected++) {
+    tempSamplesC[dataCollected] = 0;
+    tempSamplesF[dataCollected] = 0;
+    humiditySamples[dataCollected] = 0;
+  }
 }
 
 void loop() {
