@@ -4,6 +4,7 @@
 - **➕:** PlatformIO configuration
 - **➕:** required libraries
 - **➕:** kodex comments for pin layouts
+- **➕:** constants and variables
   
 # Glossary
 **ADDED** = ➕ **|**
