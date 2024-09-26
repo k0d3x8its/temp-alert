@@ -41,14 +41,30 @@
 *******************************************************************************
  *** https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf ***
 ******************************************************************************/
-#include <Arduino.h>                  // Arduino library
-#include <Adafruit_GFX.h>             // OLED display graphics library
-#include <Adafruit_SH110X.h>          // OLED driver library
-#include <DHT.h>                      // library for interacting with sensor
-#include <Adafruit_Sensor.h>          // Unified sensor interface 
+#include <Arduino.h>                    // Arduino library
+#include <Adafruit_GFX.h>               // OLED display graphics library
+#include <Adafruit_SH110X.h>            // OLED driver library
+#include <DHT.h>                        // library for interacting with sensor
+#include <Adafruit_Sensor.h>            // Unified sensor interface 
+
+#define DHTPIN 5                        // PWM connected to DHT data pin
+#define DHTTYPE DHT22                   // Define sensor type as DHT22
+
+DHT dht(DHTPIN, DHTTYPE);               // Initialize the DHT sensor object
+
+//Initialize the OLED display
+Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire); 
+
+const int dataSamples = 10;             // Number of samples to average
+float tempSamplesC[dataSamples];        // Array to store temperature samples in Celsius
+float tempSamplesF[dataSamples];        // Array to store temperature samples in Fahrenheit
+float humiditySamples[dataSamples];     // Array to store humidity samples 
+
+unsigned long lastSampleTime = 0;       // Time for Sampling
+unsigned long samplingInterval = 5000;  // Five second intervals (adjustable)
 
 void setup() {
-  // put your setup code here, to run once:
+Serial.begin(115200);                   // Start serial comms for debugging
 
 }
 
