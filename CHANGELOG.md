@@ -14,7 +14,7 @@
 - **➕:** required libraries
 - **➕:** kodex comments for pin layouts
 
-- **➕:**  and arrays for temperature and humidity data samples
+- **➕:** arrays for temperature and humidity data samples
   
 # Glossary
 **ADDED** = ➕ **|**
