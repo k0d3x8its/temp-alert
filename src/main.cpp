@@ -52,7 +52,7 @@
 
 DHT dht(DHTPIN, DHTTYPE);               // Initialize the DHT sensor object
 
-//Initialize the OLED display
+// Initialize the OLED display
 Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire); 
 
 const int dataSamples = 10;             // Number of samples to average
@@ -68,7 +68,7 @@ void setup() {
 
   dht.begin();                          // Intialize DHT sensor
 
-//Intialize OLED display
+// Intialize OLED display
   if (!display.begin(0x3C, true)) {
     Serial.println("OLED failed to initialize");
     while (1);                          // If the display fails to initialize, stop program
@@ -80,7 +80,7 @@ void setup() {
   display.setTextSize(1);               // Set text size to smallest size
   display.setTextColor(SH110X_WHITE);   // Set the text color to white
 
-  // Initialize sample array to zero
+  // Initialize sample arrays to zero
   for (int dataCollected = 0; dataCollected < dataSamples; dataCollected++) {
     tempSamplesC[dataCollected] = 0;
     tempSamplesF[dataCollected] = 0;
@@ -89,6 +89,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  if (millis() - lastSampleTime >= samplingInterval){   // Check if specified time has elapsed
+    lastSampleTime = millis();          // Update last sample time
+  }
 }
