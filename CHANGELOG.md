@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.0a (2024-10-07)
+- **➕:** if statement to manage time
+- **🛠️:** comment structure
+
 ## v0.3.0a (2024-09-26)
 - **➕:** initialization for display
 - **➕:** initialization for temperature data samples
@@ -13,7 +17,6 @@
 - **➕:** PlatformIO configuration
 - **➕:** required libraries
 - **➕:** kodex comments for pin layouts
-
 - **➕:** arrays for temperature and humidity data samples
   
 # Glossary
