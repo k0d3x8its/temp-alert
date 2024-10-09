@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.0a (2024-10-09)
+- **➕:** for loop to cycle through data samples
+- **➕:** variables for new data samples
+
 ## v0.4.0a (2024-10-07)
 - **➕:** if statement to manage time
 - **🛠️:** comment structure
