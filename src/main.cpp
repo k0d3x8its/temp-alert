@@ -1,6 +1,6 @@
 /******************************************************************************
 * + Project: temp-alert                                                       *
-* + Version: 0.4.0a                                                           *
+* + Version: 0.5.0a                                                           *
 * + Description: A MCU that alerts when temperature meets a threshold         *
 * + Board: Feather M0 Basic Proto                                             *
 * + Sensor: DHT22/AM2302                                                      *
