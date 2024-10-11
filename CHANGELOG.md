@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.6.1a
+- **🚀:** header comments to reflect board connections to sensor
+
 ## v0.6.0a
 - **➕:** averages for Celcsius, Fahrenheit and humidity
 
