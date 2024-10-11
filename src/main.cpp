@@ -1,9 +1,9 @@
 /******************************************************************************
 * + Project: temp-alert                                                       *
-* + Version: 0.5.0a                                                           *
+* + Version: 0.6.0a                                                           *
 * + Description: A MCU that alerts when temperature meets a threshold         *
 * + Board: Feather M0 Basic Proto                                             *
-* + Sensor: DHT22/AM2302                                                      *
+* + Sensor: Generic DHT22/AM2302                                              *
 * + Module: N/A                                                               *
 * + Author: K0d3x 8its                                                        *
 * + Date: September 26, 2024                                                  *
@@ -26,9 +26,9 @@
 *        SCK = Ar.24 = [ ]-|D24 o o o o o D10|-[ ] ~                          *
 *       MOSI = Ar.23 = [ ]-|D23 o o o o o  D9|-[ ] ~                          * 
 *       MISO = Ar.22 = [ ]-|D22 o o o o o  D6|-[ ]                            *
-*                RX--> [ ]-|D0  o o o o o  D5|-[ ] ~                          * 
+*                RX--> [ ]-|D0  o o o o o  D5|-[*] ~ ===> DHT22               * 
 *                TX <--[ ]-|D1  o o o o o SCL|-[ ] = Ar.21                    * 
-*                      [ ]-|GND o o o o o SDA|-[ ] = Ar.20                    * 
+*                      [*]-|GND o o o o o SDA|-[ ] = Ar.20                    * 
 *                           \_______________/                                 *                           
 *                                                                             *                               
 *******************************************************************************
