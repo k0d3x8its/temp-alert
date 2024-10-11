@@ -108,5 +108,10 @@ void loop() {
     tempSamplesC[dataSamples - 1] = newTempC;
     tempSamplesF[dataSamples - 1] = newTempF;
     humiditySamples[dataSamples - 1] = newHumidity;
+
+    // calculate the averages
+    float avgTempC = 0;
+    float avgTempF = 0;
+    float avgHumidity = 0;
   }
 }
