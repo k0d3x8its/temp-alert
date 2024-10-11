@@ -1,6 +1,9 @@
 # Changelog
 
-##v0.5.1a
+## v0.6.0a
+- **➕:** averages for Celcsius, Fahrenheit and humidity
+
+## v0.5.1a
 - **🛠️:** positon of for loop and variables to be inside the if statement
 
 ## v0.5.0a (2024-10-09)
