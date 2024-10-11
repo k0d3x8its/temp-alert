@@ -92,22 +92,21 @@ void loop() {
   // Check if specified time has elapsed
   if (millis() - lastSampleTime >= samplingInterval){ 
     lastSampleTime = millis();          // Update last sample time
+      // Shift the previous samples - rolling window of samples
+    for (int dataCollected = 1; dataCollected < dataSamples; dataCollected++) {
+      tempSamplesC[dataCollected - 1] = tempSamplesC[dataCollected];
+      tempSamplesF[dataCollected - 1] = tempSamplesF[dataCollected];
+      humiditySamples[dataCollected - 1] = humiditySamples[dataCollected]; 
+    }
+
+    // Take temperature and humidity readings
+    float newTempC = dht.readTemperature();     // Read temperature in Celsius
+    float newTempF = dht.readTemperature(true); // Read temperature in Fahrenheit
+    float newHumidity = dht.readHumidity();     // Read humidity in percentage   
+
+    // Add the new samples to the arrays
+    tempSamplesC[dataSamples - 1] = newTempC;
+    tempSamplesF[dataSamples - 1] = newTempF;
+    humiditySamples[dataSamples - 1] = newHumidity;
   }
-
-  // Shift the previous samples - rolling window of samples
-  for (int dataCollected = 1; dataCollected < dataSamples; dataCollected++) {
-    tempSamplesC[dataCollected - 1] = tempSamplesC[dataCollected];
-    tempSamplesF[dataCollected - 1] = tempSamplesF[dataCollected];
-    humiditySamples[dataCollected - 1] = humiditySamples[dataCollected]; 
-  }
-
-  // Take temperature and humidity readings
-  float newTempC = dht.readTemperature();     // Read temperature in Celsius
-  float newTempF = dht.readTemperature(true); // Read temperature in Fahrenheit
-  float newHumidity = dht.readHumidity();     // Read humidity in percentage   
-
-  // Add the new samples to the arrays
-  tempSamplesC[dataSamples - 1] = newTempC;
-  tempSamplesF[dataSamples - 1] = newTempF;
-  humiditySamples[dataSamples - 1] = newHumidity;
 }
