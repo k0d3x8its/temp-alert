@@ -1,5 +1,8 @@
 # Changelog
 
+##v0.5.1a
+- **🛠️:** positon of for loop and variables to be inside the if statement
+
 ## v0.5.0a (2024-10-09)
 - **➕:** for loop to cycle through data samples
 - **➕:** variables for new data samples
