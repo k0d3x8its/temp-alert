@@ -1,12 +1,12 @@
 # Changelog
 
-## v0.6.1a
+## v0.6.1a (2024-10-11)
 - **🚀:** header comments to reflect board connections to sensor
 
-## v0.6.0a
+## v0.6.0a (2024-10-11)
 - **➕:** averages for Celcsius, Fahrenheit and humidity
 
-## v0.5.1a
+## v0.5.1a (2024-10-10)
 - **🛠️:** positon of for loop and variables to be inside the if statement
 
 ## v0.5.0a (2024-10-09)
